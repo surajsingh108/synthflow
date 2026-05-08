@@ -1,6 +1,6 @@
 # synthflow
 
-Synthetic sensor data generation with automatic imputation and model selection.
+Synthetic sensor data generation with automatic imputation and model selection. A TSGM wrapper which automatically handles data ingestion, imputation and modelling part. Configuration is though a Claude API and also manual. Handles missing data and data type modelling automatically. 
 
 ## Install
 
