@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthflow"
+version = "0.1.0"
+description = "Synthetic sensor data generation with automatic imputation and model selection"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["synthetic data", "sensors", "time series", "generative"]
+
+dependencies = [
+    "anthropic",
+    "tsgm",
+    "hyperimpute",
+    "pydantic>=2.0",
+    "openpyxl",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+sdv    = ["sdv"]
+gretel = ["gretel-synthetics"]
+all    = ["sdv", "gretel-synthetics"]
+dev    = ["pytest", "pytest-cov"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["synthflow*"]
