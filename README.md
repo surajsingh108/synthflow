@@ -29,3 +29,6 @@ config = SynConfig(
 sf = SynFlow(mode="manual", config=config, data="sensor_data.csv")
 result = sf.generate()
 print(result.data.head())
+
+### TSGM
+https://tsgm.readthedocs.io/ 
