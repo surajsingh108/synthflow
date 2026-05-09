@@ -268,10 +268,14 @@ class SynFlow:
             timestamp_col=load_result.timestamp_col,
             model_name=selection.model,
             n_samples=config.n_samples,
-            epochs=10,
+            epochs=config.training_epochs,
             batch_size=selection.batch_size,
             random_seed=config.random_seed,
             sampling_rate_hz=fs,
+            seq_len=config.seq_len,
+            data_type=config.data_type,
+            auto_bounds=config.auto_bounds,
+            column_bounds=dict(config.column_bounds),
         )
 
         # 5. quality

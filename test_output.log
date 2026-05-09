@@ -1,0 +1,582 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.7, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\suraj\AppData\Local\Programs\Python\Python311\python.exe
+cachedir: .pytest_cache
+Fugue tests will be initialized with options:
+rootdir: C:\Users\suraj\GitHub\synthflow
+configfile: pyproject.toml
+plugins: anyio-4.12.1, dash-4.1.0, fugue-0.9.7, cov-7.1.0, typeguard-4.5.1
+collecting ... collected 387 items
+
+tests/test_stage1_foundation.py::TestImports::test_import_synthflow PASSED [  0%]
+tests/test_stage1_foundation.py::TestImports::test_version_exists PASSED [  0%]
+tests/test_stage1_foundation.py::TestImports::test_synflow_importable_from_top PASSED [  0%]
+tests/test_stage1_foundation.py::TestImports::test_all_exceptions_importable PASSED [  1%]
+tests/test_stage1_foundation.py::TestImports::test_dunder_all_complete PASSED [  1%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_base_exception_is_exception PASSED [  1%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_all_exceptions_inherit_from_syn_error PASSED [  1%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_exception_message PASSED [  2%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_exception_message_with_detail PASSED [  2%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_exceptions_are_catchable_as_base PASSED [  2%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_each_exception_has_message_attr PASSED [  2%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_each_exception_has_detail_attr PASSED [  3%]
+tests/test_stage1_foundation.py::TestExceptionHierarchy::test_detail_defaults_to_empty_string PASSED [  3%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_manual_mode_with_stub_config PASSED [  3%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_manual_mode_stores_mode PASSED [  3%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_manual_mode_stores_config PASSED [  4%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_manual_mode_stores_data_path PASSED [  4%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_manual_mode_no_config_raises PASSED [  4%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_auto_mode_no_key_raises PASSED [  4%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_auto_mode_key_from_env PASSED [  5%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_auto_mode_explicit_key PASSED [  5%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_invalid_mode_raises PASSED [  5%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_repr_contains_mode PASSED [  5%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_version_constant PASSED [  6%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_chat_raises_not_implemented PASSED [  6%]
+tests/test_stage1_foundation.py::TestSynFlowInstantiation::test_generate_raises_not_implemented PASSED [  6%]
+tests/test_stage2_config.py::TestImport::test_synconfig_importable_from_parser PASSED [  6%]
+tests/test_stage2_config.py::TestImport::test_synconfig_importable_from_schema PASSED [  7%]
+tests/test_stage2_config.py::TestDefaults::test_default_domain PASSED    [  7%]
+tests/test_stage2_config.py::TestDefaults::test_default_sensor_type PASSED [  7%]
+tests/test_stage2_config.py::TestDefaults::test_default_sampling_rate PASSED [  8%]
+tests/test_stage2_config.py::TestDefaults::test_default_missing_pattern PASSED [  8%]
+tests/test_stage2_config.py::TestDefaults::test_default_imputation_strategy PASSED [  8%]
+tests/test_stage2_config.py::TestDefaults::test_default_backend PASSED   [  8%]
+tests/test_stage2_config.py::TestDefaults::test_default_model PASSED     [  9%]
+tests/test_stage2_config.py::TestDefaults::test_default_n_samples PASSED [  9%]
+tests/test_stage2_config.py::TestDefaults::test_default_augmentations_empty_list PASSED [  9%]
+tests/test_stage2_config.py::TestDefaults::test_default_random_seed PASSED [  9%]
+tests/test_stage2_config.py::TestDefaults::test_default_device PASSED    [ 10%]
+tests/test_stage2_config.py::TestDefaults::test_default_batch_size PASSED [ 10%]
+tests/test_stage2_config.py::TestDefaults::test_default_imputation_overrides_empty PASSED [ 10%]
+tests/test_stage2_config.py::TestDefaults::test_default_description_empty PASSED [ 10%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_domain PASSED   [ 11%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_sensor_types PASSED [ 11%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_sampling_rate PASSED [ 11%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_missing_patterns PASSED [ 11%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_imputation_strategies PASSED [ 12%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_backends PASSED [ 12%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_models PASSED   [ 12%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_n_samples PASSED [ 12%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_augmentations PASSED [ 13%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_device PASSED   [ 13%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_imputation_overrides PASSED [ 13%]
+tests/test_stage2_config.py::TestValidInputs::test_valid_description PASSED [ 13%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_domain_raises PASSED [ 14%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_sensor_type_raises PASSED [ 14%]
+tests/test_stage2_config.py::TestInvalidInputs::test_zero_sampling_rate_raises PASSED [ 14%]
+tests/test_stage2_config.py::TestInvalidInputs::test_negative_sampling_rate_raises PASSED [ 14%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_missing_pattern_raises PASSED [ 15%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_imputation_strategy_raises PASSED [ 15%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_backend_raises PASSED [ 15%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_model_raises PASSED [ 16%]
+tests/test_stage2_config.py::TestInvalidInputs::test_zero_n_samples_raises PASSED [ 16%]
+tests/test_stage2_config.py::TestInvalidInputs::test_n_samples_too_large_raises PASSED [ 16%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_augmentation_raises PASSED [ 16%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_device_raises PASSED [ 17%]
+tests/test_stage2_config.py::TestInvalidInputs::test_zero_batch_size_raises PASSED [ 17%]
+tests/test_stage2_config.py::TestInvalidInputs::test_batch_size_too_large_raises PASSED [ 17%]
+tests/test_stage2_config.py::TestInvalidInputs::test_invalid_imputation_override_value_raises PASSED [ 17%]
+tests/test_stage2_config.py::TestInvalidInputs::test_description_too_long_raises PASSED [ 18%]
+tests/test_stage2_config.py::TestCrossFieldValidation::test_wavegan_requires_tsgm_backend PASSED [ 18%]
+tests/test_stage2_config.py::TestCrossFieldValidation::test_wavegan_with_tsgm_passes PASSED [ 18%]
+tests/test_stage2_config.py::TestCrossFieldValidation::test_gaussian_process_with_sdv_raises PASSED [ 18%]
+tests/test_stage2_config.py::TestCrossFieldValidation::test_gaussian_process_with_tsgm_passes PASSED [ 19%]
+tests/test_stage2_config.py::TestCrossFieldValidation::test_gaussian_process_with_timesynth_passes PASSED [ 19%]
+tests/test_stage2_config.py::TestCrossFieldValidation::test_ar_with_gretel_raises PASSED [ 19%]
+tests/test_stage2_config.py::TestSerialisation::test_to_json_returns_string PASSED [ 19%]
+tests/test_stage2_config.py::TestSerialisation::test_to_json_is_valid_json PASSED [ 20%]
+tests/test_stage2_config.py::TestSerialisation::test_to_json_writes_file PASSED [ 20%]
+tests/test_stage2_config.py::TestSerialisation::test_from_json_string_roundtrip PASSED [ 20%]
+tests/test_stage2_config.py::TestSerialisation::test_from_json_file_roundtrip PASSED [ 20%]
+tests/test_stage2_config.py::TestSerialisation::test_roundtrip_preserves_all_fields PASSED [ 21%]
+tests/test_stage2_config.py::TestPatch::test_patch_returns_new_instance PASSED [ 21%]
+tests/test_stage2_config.py::TestPatch::test_patch_does_not_mutate_original PASSED [ 21%]
+tests/test_stage2_config.py::TestPatch::test_patch_applies_single_field PASSED [ 21%]
+tests/test_stage2_config.py::TestPatch::test_patch_preserves_other_fields PASSED [ 22%]
+tests/test_stage2_config.py::TestPatch::test_patch_multiple_fields PASSED [ 22%]
+tests/test_stage2_config.py::TestPatch::test_patch_validates_new_values PASSED [ 22%]
+tests/test_stage2_config.py::TestSummary::test_summary_returns_string PASSED [ 22%]
+tests/test_stage2_config.py::TestSummary::test_summary_non_empty PASSED  [ 23%]
+tests/test_stage2_config.py::TestSummary::test_summary_contains_domain PASSED [ 23%]
+tests/test_stage2_config.py::TestSummary::test_summary_contains_model PASSED [ 23%]
+tests/test_stage2_config.py::TestSummary::test_summary_contains_sampling_rate PASSED [ 24%]
+tests/test_stage3_ingestor.py::TestImport::test_syningestor_importable PASSED [ 24%]
+tests/test_stage3_ingestor.py::TestImport::test_loadresult_importable PASSED [ 24%]
+tests/test_stage3_ingestor.py::TestCSVLoading::test_loads_csv_file PASSED [ 24%]
+tests/test_stage3_ingestor.py::TestCSVLoading::test_csv_correct_row_count PASSED [ 25%]
+tests/test_stage3_ingestor.py::TestCSVLoading::test_csv_correct_col_count PASSED [ 25%]
+tests/test_stage3_ingestor.py::TestCSVLoading::test_csv_source_label PASSED [ 25%]
+tests/test_stage3_ingestor.py::TestCSVLoading::test_csv_as_string_path PASSED [ 25%]
+tests/test_stage3_ingestor.py::TestExcelLoading::test_loads_excel_file PASSED [ 26%]
+tests/test_stage3_ingestor.py::TestExcelLoading::test_excel_correct_row_count PASSED [ 26%]
+tests/test_stage3_ingestor.py::TestExcelLoading::test_excel_source_label PASSED [ 26%]
+tests/test_stage3_ingestor.py::TestJSONLoading::test_loads_json_array PASSED [ 26%]
+tests/test_stage3_ingestor.py::TestJSONLoading::test_json_correct_row_count PASSED [ 27%]
+tests/test_stage3_ingestor.py::TestJSONLoading::test_loads_json_tsdb_format PASSED [ 27%]
+tests/test_stage3_ingestor.py::TestJSONLoading::test_json_tsdb_has_correct_columns PASSED [ 27%]
+tests/test_stage3_ingestor.py::TestDataFrameInput::test_accepts_dataframe_directly PASSED [ 27%]
+tests/test_stage3_ingestor.py::TestDataFrameInput::test_dataframe_source_label PASSED [ 28%]
+tests/test_stage3_ingestor.py::TestDataFrameInput::test_does_not_mutate_input_dataframe PASSED [ 28%]
+tests/test_stage3_ingestor.py::TestTimestampDetection::test_detects_timestamp_column PASSED [ 28%]
+tests/test_stage3_ingestor.py::TestTimestampDetection::test_detects_ts_column_by_name PASSED [ 28%]
+tests/test_stage3_ingestor.py::TestTimestampDetection::test_detects_datetime_dtype_column PASSED [ 29%]
+tests/test_stage3_ingestor.py::TestTimestampDetection::test_no_timestamp_returns_none PASSED [ 29%]
+tests/test_stage3_ingestor.py::TestTimestampDetection::test_user_hint_overrides_detection PASSED [ 29%]
+tests/test_stage3_ingestor.py::TestSignalColDetection::test_detects_signal_cols PASSED [ 29%]
+tests/test_stage3_ingestor.py::TestSignalColDetection::test_timestamp_excluded_from_signal_cols PASSED [ 30%]
+tests/test_stage3_ingestor.py::TestSignalColDetection::test_user_hint_overrides_signal_cols PASSED [ 30%]
+tests/test_stage3_ingestor.py::TestSamplingRateInference::test_infers_100hz PASSED [ 30%]
+tests/test_stage3_ingestor.py::TestSamplingRateInference::test_infers_500hz PASSED [ 31%]
+tests/test_stage3_ingestor.py::TestSamplingRateInference::test_no_timestamp_sampling_rate_none PASSED [ 31%]
+tests/test_stage3_ingestor.py::TestMissingStats::test_missing_pct_zero_for_clean_data PASSED [ 31%]
+tests/test_stage3_ingestor.py::TestMissingStats::test_missing_pct_nonzero_for_dirty_data PASSED [ 31%]
+tests/test_stage3_ingestor.py::TestErrorHandling::test_missing_file_raises_syn_ingest_error PASSED [ 32%]
+tests/test_stage3_ingestor.py::TestErrorHandling::test_unsupported_format_raises_syn_ingest_error PASSED [ 32%]
+tests/test_stage3_ingestor.py::TestErrorHandling::test_empty_csv_raises_syn_ingest_error PASSED [ 32%]
+tests/test_stage3_ingestor.py::TestErrorHandling::test_empty_dataframe_raises_syn_ingest_error PASSED [ 32%]
+tests/test_stage3_ingestor.py::TestValidatorWarnings::test_small_dataset_produces_warning PASSED [ 33%]
+tests/test_stage3_ingestor.py::TestValidatorWarnings::test_clean_large_dataset_no_warnings PASSED [ 33%]
+tests/test_stage3_ingestor.py::TestValidatorWarnings::test_constant_column_produces_warning PASSED [ 33%]
+tests/test_stage3_ingestor.py::TestValidatorWarnings::test_high_missing_produces_warning PASSED [ 33%]
+tests/test_stage3_ingestor.py::TestValidatorWarnings::test_duplicate_rows_produces_warning PASSED [ 34%]
+tests/test_stage4_missing.py::TestImport::test_syn_pattern_detector_importable PASSED [ 34%]
+tests/test_stage4_missing.py::TestImport::test_importable_from_module PASSED [ 34%]
+tests/test_stage4_missing.py::TestImport::test_column_result_importable PASSED [ 34%]
+tests/test_stage4_missing.py::TestImport::test_detection_result_importable PASSED [ 35%]
+tests/test_stage4_missing.py::TestNoMissing::test_clean_column_returns_none PASSED [ 35%]
+tests/test_stage4_missing.py::TestNoMissing::test_all_clean_columns_return_none PASSED [ 35%]
+tests/test_stage4_missing.py::TestNoMissing::test_none_pattern_has_zero_missing_count PASSED [ 35%]
+tests/test_stage4_missing.py::TestMCAR::test_random_missing_detected_as_mcar PASSED [ 36%]
+tests/test_stage4_missing.py::TestMCAR::test_mcar_has_correct_missing_count PASSED [ 36%]
+tests/test_stage4_missing.py::TestMCAR::test_mcar_missing_pct_reasonable PASSED [ 36%]
+tests/test_stage4_missing.py::TestMCAR::test_trivial_missing_classified_as_mcar PASSED [ 36%]
+tests/test_stage4_missing.py::TestMCAR::test_trivial_detection_path_mentions_trivial PASSED [ 37%]
+tests/test_stage4_missing.py::TestMAR::test_correlated_missing_detected_as_mar PASSED [ 37%]
+tests/test_stage4_missing.py::TestMAR::test_mar_result_has_max_corr PASSED [ 37%]
+tests/test_stage4_missing.py::TestMAR::test_mar_max_corr_above_threshold PASSED [ 37%]
+tests/test_stage4_missing.py::TestMAR::test_non_missing_columns_not_affected_by_mar_test PASSED [ 38%]
+tests/test_stage4_missing.py::TestMNAR::test_tail_missing_detected_as_mnar PASSED [ 38%]
+tests/test_stage4_missing.py::TestMNAR::test_mnar_result_has_tail_frac PASSED [ 38%]
+tests/test_stage4_missing.py::TestMNAR::test_mnar_tail_frac_high PASSED  [ 39%]
+tests/test_stage4_missing.py::TestMNAR::test_head_concentrated_missing_detected_as_mnar PASSED [ 39%]
+tests/test_stage4_missing.py::TestDetectionResult::test_summary_has_all_pattern_keys PASSED [ 39%]
+tests/test_stage4_missing.py::TestDetectionResult::test_summary_groups_columns_correctly PASSED [ 39%]
+tests/test_stage4_missing.py::TestDetectionResult::test_as_dict_returns_pattern_per_column PASSED [ 40%]
+tests/test_stage4_missing.py::TestDetectionResult::test_as_dict_covers_all_columns PASSED [ 40%]
+tests/test_stage4_missing.py::TestDetectionResult::test_pattern_for_unknown_column_raises PASSED [ 40%]
+tests/test_stage4_missing.py::TestSingleColumn::test_detect_column_returns_column_result PASSED [ 40%]
+tests/test_stage4_missing.py::TestSingleColumn::test_detect_column_matches_detect_all PASSED [ 41%]
+tests/test_stage4_missing.py::TestConfigurableThresholds::test_higher_mar_threshold_changes_classification PASSED [ 41%]
+tests/test_stage4_missing.py::TestConfigurableThresholds::test_lower_trivial_threshold_runs_full_detection PASSED [ 41%]
+tests/test_stage4_missing.py::TestConfigurableThresholds::test_lower_mnar_concentration_triggers_mnar_earlier PASSED [ 41%]
+tests/test_stage4_missing.py::TestEdgeCases::test_all_missing_column PASSED [ 42%]
+tests/test_stage4_missing.py::TestEdgeCases::test_single_column_dataframe PASSED [ 42%]
+tests/test_stage4_missing.py::TestEdgeCases::test_non_numeric_columns_detected_as_none_or_mcar PASSED [ 42%]
+tests/test_stage4_missing.py::TestEdgeCases::test_detect_all_columns_present_in_result PASSED [ 42%]
+tests/test_stage5_imputer.py::TestImport::test_syn_imputer_importable PASSED [ 43%]
+tests/test_stage5_imputer.py::TestImport::test_impute_result_importable PASSED [ 43%]
+tests/test_stage5_imputer.py::TestImport::test_importable_from_engine PASSED [ 43%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_forward_fill_produces_zero_nans PASSED [ 43%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_spline_produces_zero_nans PASSED [ 44%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_explicit_forward_fill_produces_zero_nans PASSED [ 44%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_explicit_spline_produces_zero_nans PASSED [ 44%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans PASSED [ 44%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_mice_produces_zero_nans PASSED [ 45%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_missforest_produces_zero_nans PASSED [ 45%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_hyperimpute_produces_zero_nans PASSED [ 45%]
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_missing_pct_after_is_zero PASSED [ 45%]
+tests/test_stage5_imputer.py::TestShapePreservation::test_shape_preserved_forward_fill PASSED [ 46%]
+tests/test_stage5_imputer.py::TestShapePreservation::test_shape_preserved_spline PASSED [ 46%]
+tests/test_stage5_imputer.py::TestShapePreservation::test_shape_preserved_knn PASSED [ 46%]
+tests/test_stage5_imputer.py::TestShapePreservation::test_columns_unchanged PASSED [ 47%]
+tests/test_stage5_imputer.py::TestShapePreservation::test_index_preserved PASSED [ 47%]
+tests/test_stage5_imputer.py::TestImputeResultFields::test_total_missing_before_correct PASSED [ 47%]
+tests/test_stage5_imputer.py::TestImputeResultFields::test_missing_pct_before_positive PASSED [ 47%]
+tests/test_stage5_imputer.py::TestImputeResultFields::test_pattern_detected_is_string PASSED [ 48%]
+tests/test_stage5_imputer.py::TestImputeResultFields::test_strategy_used_is_string PASSED [ 48%]
+tests/test_stage5_imputer.py::TestImputeResultFields::test_columns_list_not_empty_for_dirty_data PASSED [ 48%]
+tests/test_stage5_imputer.py::TestImputeResultFields::test_column_detail_has_correct_fields PASSED [ 48%]
+tests/test_stage5_imputer.py::TestImputeResultFields::test_data_is_dataframe PASSED [ 49%]
+tests/test_stage5_imputer.py::TestCleanData::test_clean_df_returns_zero_missing_before PASSED [ 49%]
+tests/test_stage5_imputer.py::TestCleanData::test_clean_df_pattern_is_none PASSED [ 49%]
+tests/test_stage5_imputer.py::TestCleanData::test_clean_df_strategy_is_none PASSED [ 49%]
+tests/test_stage5_imputer.py::TestCleanData::test_clean_df_columns_list_empty PASSED [ 50%]
+tests/test_stage5_imputer.py::TestCleanData::test_clean_df_data_unchanged PASSED [ 50%]
+tests/test_stage5_imputer.py::TestPerColumnOverrides::test_override_applies_specified_strategy PASSED [ 50%]
+tests/test_stage5_imputer.py::TestPerColumnOverrides::test_override_does_not_affect_other_cols PASSED [ 50%]
+tests/test_stage5_imputer.py::TestPerColumnOverrides::test_result_still_zero_nans_with_overrides PASSED [ 51%]
+tests/test_stage5_imputer.py::TestAsDict::test_as_dict_returns_dict PASSED [ 51%]
+tests/test_stage5_imputer.py::TestAsDict::test_as_dict_has_required_keys PASSED [ 51%]
+tests/test_stage5_imputer.py::TestAsDict::test_as_dict_missing_pct_after_zero PASSED [ 51%]
+tests/test_stage5_imputer.py::TestAsDict::test_as_dict_columns_affected_not_empty PASSED [ 52%]
+tests/test_stage5_imputer.py::TestAsDict::test_as_dict_clean_data_columns_affected_empty PASSED [ 52%]
+tests/test_stage5_imputer.py::TestSignalColsFiltering::test_signal_cols_limits_imputation PASSED [ 52%]
+tests/test_stage6_router.py::TestImport::test_syn_router_importable PASSED [ 52%]
+tests/test_stage6_router.py::TestImport::test_selection_result_importable PASSED [ 53%]
+tests/test_stage6_router.py::TestImport::test_importable_from_backend_router PASSED [ 53%]
+tests/test_stage6_router.py::TestImport::test_domain_rules_importable PASSED [ 53%]
+tests/test_stage6_router.py::TestDomainSizeSelection::test_audio_domain_selects_wavegan PASSED [ 54%]
+tests/test_stage6_router.py::TestDomainSizeSelection::test_tiny_dataset_selects_probabilistic PASSED [ 54%]
+tests/test_stage6_router.py::TestDomainSizeSelection::test_large_industrial_selects_timegan_or_timevae PASSED [ 54%]
+tests/test_stage6_router.py::TestDomainSizeSelection::test_iot_medium_dataset_selects_timevae PASSED [ 54%]
+tests/test_stage6_router.py::TestDomainSizeSelection::test_financial_ar_model_preferred_for_low_freq PASSED [ 55%]
+tests/test_stage6_router.py::TestVRAMConstraints::test_no_vram_selects_cpu_model PASSED [ 55%]
+tests/test_stage6_router.py::TestVRAMConstraints::test_2gb_vram_excludes_timegan_and_wavegan PASSED [ 55%]
+tests/test_stage6_router.py::TestVRAMConstraints::test_8gb_vram_allows_all_models PASSED [ 55%]
+tests/test_stage6_router.py::TestVRAMConstraints::test_vram_score_zero_for_model_exceeding_vram PASSED [ 56%]
+tests/test_stage6_router.py::TestVRAMConstraints::test_cpu_model_always_scores_max_vram PASSED [ 56%]
+tests/test_stage6_router.py::TestBatchSizeTuning::test_default_batch_size_with_plenty_of_vram PASSED [ 56%]
+tests/test_stage6_router.py::TestBatchSizeTuning::test_reduced_batch_size_with_tight_vram PASSED [ 56%]
+tests/test_stage6_router.py::TestBatchSizeTuning::test_cpu_model_keeps_default_batch_size PASSED [ 57%]
+tests/test_stage6_router.py::TestBatchSizeTuning::test_batch_size_at_least_16 PASSED [ 57%]
+tests/test_stage6_router.py::TestBatchSizeTuning::test_batch_size_is_power_of_two_or_reasonable PASSED [ 57%]
+tests/test_stage6_router.py::TestUserSpecifiedModel::test_preferred_model_bypasses_scoring PASSED [ 57%]
+tests/test_stage6_router.py::TestUserSpecifiedModel::test_preferred_model_still_tunes_batch_size PASSED [ 58%]
+tests/test_stage6_router.py::TestUserSpecifiedModel::test_invalid_preferred_model_raises PASSED [ 58%]
+tests/test_stage6_router.py::TestUserSpecifiedModel::test_preferred_model_reason_mentions_user PASSED [ 58%]
+tests/test_stage6_router.py::TestFallbackChain::test_timegan_has_fallback PASSED [ 58%]
+tests/test_stage6_router.py::TestFallbackChain::test_wavegan_fallback_chain_length PASSED [ 59%]
+tests/test_stage6_router.py::TestFallbackChain::test_gaussian_process_has_no_fallback PASSED [ 59%]
+tests/test_stage6_router.py::TestFallbackChain::test_next_fallback_returns_correct_model PASSED [ 59%]
+tests/test_stage6_router.py::TestFallbackChain::test_next_fallback_from_timevae PASSED [ 59%]
+tests/test_stage6_router.py::TestFallbackChain::test_next_fallback_returns_none_at_end_of_chain PASSED [ 60%]
+tests/test_stage6_router.py::TestSelectionResult::test_result_has_model PASSED [ 60%]
+tests/test_stage6_router.py::TestSelectionResult::test_result_has_fallback PASSED [ 60%]
+tests/test_stage6_router.py::TestSelectionResult::test_result_has_batch_size PASSED [ 60%]
+tests/test_stage6_router.py::TestSelectionResult::test_result_has_vram PASSED [ 61%]
+tests/test_stage6_router.py::TestSelectionResult::test_result_has_scores_list PASSED [ 61%]
+tests/test_stage6_router.py::TestSelectionResult::test_scores_sorted_descending PASSED [ 61%]
+tests/test_stage6_router.py::TestSelectionResult::test_result_has_reason PASSED [ 62%]
+tests/test_stage6_router.py::TestSelectionResult::test_summary_returns_string PASSED [ 62%]
+tests/test_stage6_router.py::TestScoringFunctions::test_score_size_tiny_favours_probabilistic PASSED [ 62%]
+tests/test_stage6_router.py::TestScoringFunctions::test_score_size_large_favours_gans PASSED [ 62%]
+tests/test_stage6_router.py::TestScoringFunctions::test_score_complexity_high_freq_favours_wavegan PASSED [ 63%]
+tests/test_stage6_router.py::TestScoringFunctions::test_score_complexity_low_freq_favours_ar PASSED [ 63%]
+tests/test_stage6_router.py::TestScoringFunctions::test_score_domain_audio_favours_wavegan PASSED [ 63%]
+tests/test_stage6_router.py::TestScoringFunctions::test_score_domain_industrial_favours_timevae_or_timegan PASSED [ 63%]
+tests/test_stage6_router.py::TestScoringFunctions::test_all_scores_in_range_0_to_3 PASSED [ 64%]
+tests/test_stage7_tsgm.py::TestImport::test_syn_backend_importable PASSED [ 64%]
+tests/test_stage7_tsgm.py::TestImport::test_tsgm_backend_importable PASSED [ 64%]
+tests/test_stage7_tsgm.py::TestImport::test_base_importable_from_module PASSED [ 64%]
+tests/test_stage7_tsgm.py::TestImport::test_utilities_importable PASSED  [ 65%]
+tests/test_stage7_tsgm.py::TestAbstractInterface::test_cannot_instantiate_syn_backend PASSED [ 65%]
+tests/test_stage7_tsgm.py::TestAbstractInterface::test_concrete_must_implement_fit PASSED [ 65%]
+tests/test_stage7_tsgm.py::TestAbstractInterface::test_concrete_must_implement_generate PASSED [ 65%]
+tests/test_stage7_tsgm.py::TestWindowDataframe::test_output_shape_correct PASSED [ 66%]
+tests/test_stage7_tsgm.py::TestWindowDataframe::test_n_windows_reasonable PASSED [ 66%]
+tests/test_stage7_tsgm.py::TestWindowDataframe::test_default_step_is_half_seq_len PASSED [ 66%]
+tests/test_stage7_tsgm.py::TestWindowDataframe::test_dtype_is_float32 PASSED [ 66%]
+tests/test_stage7_tsgm.py::TestWindowDataframe::test_too_short_raises_syn_backend_error PASSED [ 67%]
+tests/test_stage7_tsgm.py::TestDewindowArray::test_output_shape_correct PASSED [ 67%]
+tests/test_stage7_tsgm.py::TestDewindowArray::test_n_target_rows_trims PASSED [ 67%]
+tests/test_stage7_tsgm.py::TestDewindowArray::test_n_target_rows_pads PASSED [ 67%]
+tests/test_stage7_tsgm.py::TestBuildOutputDf::test_signal_cols_have_synthetic_prefix PASSED [ 68%]
+tests/test_stage7_tsgm.py::TestBuildOutputDf::test_original_col_names_not_present PASSED [ 68%]
+tests/test_stage7_tsgm.py::TestBuildOutputDf::test_timestamp_col_preserved_without_prefix PASSED [ 68%]
+tests/test_stage7_tsgm.py::TestBuildOutputDf::test_output_row_count_matches_n_rows PASSED [ 68%]
+tests/test_stage7_tsgm.py::TestBuildOutputDf::test_no_timestamp_col_not_in_output PASSED [ 69%]
+tests/test_stage7_tsgm.py::TestInferSeqLen::test_seq_len_at_least_8 PASSED [ 69%]
+tests/test_stage7_tsgm.py::TestInferSeqLen::test_seq_len_at_most_128 PASSED [ 69%]
+tests/test_stage7_tsgm.py::TestInferSeqLen::test_seq_len_reasonable_for_100hz PASSED [ 70%]
+tests/test_stage7_tsgm.py::TestInferSeqLen::test_ensures_enough_windows PASSED [ 70%]
+tests/test_stage7_tsgm.py::TestGaussianProcess::test_gp_fits_without_error PASSED [ 70%]
+tests/test_stage7_tsgm.py::TestGaussianProcess::test_gp_is_fitted_after_fit PASSED [ 70%]
+tests/test_stage7_tsgm.py::TestGaussianProcess::test_gp_generate_correct_shape PASSED [ 71%]
+tests/test_stage7_tsgm.py::TestGaussianProcess::test_gp_generate_before_fit_raises PASSED [ 71%]
+tests/test_stage7_tsgm.py::TestGaussianProcess::test_gp_reproducible_with_same_seed PASSED [ 71%]
+tests/test_stage7_tsgm.py::TestGaussianProcess::test_gp_name PASSED      [ 71%]
+tests/test_stage7_tsgm.py::TestARModel::test_ar_fits_without_error PASSED [ 72%]
+tests/test_stage7_tsgm.py::TestARModel::test_ar_generate_correct_shape PASSED [ 72%]
+tests/test_stage7_tsgm.py::TestARModel::test_ar_reproducible_with_same_seed PASSED [ 72%]
+tests/test_stage7_tsgm.py::TestARModel::test_ar_name PASSED              [ 72%]
+tests/test_stage7_tsgm.py::TestTsgmBackendRun::test_run_gaussian_process_output_format PASSED [ 73%]
+tests/test_stage7_tsgm.py::TestTsgmBackendRun::test_run_ar_output_format PASSED [ 73%]
+tests/test_stage7_tsgm.py::TestTsgmBackendRun::test_run_no_timestamp PASSED [ 73%]
+tests/test_stage7_tsgm.py::TestTsgmBackendRun::test_run_no_nans_in_output PASSED [ 73%]
+tests/test_stage7_tsgm.py::TestTsgmBackendRun::test_run_unknown_model_raises PASSED [ 74%]
+tests/test_stage7_tsgm.py::TestTsgmBackendRun::test_run_with_nans_raises PASSED [ 74%]
+tests/test_stage7_tsgm.py::TestTsgmBackendRun::test_run_reproducible_gp PASSED [ 74%]
+tests/test_stage8_output.py::TestImport::test_syn_result_importable PASSED [ 74%]
+tests/test_stage8_output.py::TestImport::test_quality_module_importable PASSED [ 75%]
+tests/test_stage8_output.py::TestImport::test_report_importable PASSED   [ 75%]
+tests/test_stage8_output.py::TestImport::test_writer_importable PASSED   [ 75%]
+tests/test_stage8_output.py::TestImport::test_console_importable PASSED  [ 75%]
+tests/test_stage8_output.py::TestQualityMetrics::test_distribution_similarity_identical PASSED [ 76%]
+tests/test_stage8_output.py::TestQualityMetrics::test_distribution_similarity_different PASSED [ 76%]
+tests/test_stage8_output.py::TestQualityMetrics::test_distribution_similarity_in_range PASSED [ 76%]
+tests/test_stage8_output.py::TestQualityMetrics::test_distribution_similarity_all_has_overall PASSED [ 77%]
+tests/test_stage8_output.py::TestQualityMetrics::test_distribution_similarity_all_per_column PASSED [ 77%]
+tests/test_stage8_output.py::TestQualityMetrics::test_autocorrelation_score_in_range PASSED [ 77%]
+tests/test_stage8_output.py::TestQualityMetrics::test_pca_overlap_score_in_range PASSED [ 77%]
+tests/test_stage8_output.py::TestQualityMetrics::test_pca_overlap_identical_data_high_score PASSED [ 78%]
+tests/test_stage8_output.py::TestQualityMetrics::test_tstr_score_in_range PASSED [ 78%]
+tests/test_stage8_output.py::TestQualityMetrics::test_compute_all_metrics_has_four_keys PASSED [ 78%]
+tests/test_stage8_output.py::TestQualityMetrics::test_compute_all_metrics_values_in_range PASSED [ 78%]
+tests/test_stage8_output.py::TestSynReport::test_as_dict_has_required_keys PASSED [ 79%]
+tests/test_stage8_output.py::TestSynReport::test_to_json_valid PASSED    [ 79%]
+tests/test_stage8_output.py::TestSynReport::test_to_json_writes_file PASSED [ 79%]
+tests/test_stage8_output.py::TestSynReport::test_make_run_id_format PASSED [ 79%]
+tests/test_stage8_output.py::TestSynReport::test_build_column_descriptions PASSED [ 80%]
+tests/test_stage8_output.py::TestSynWriter::test_write_creates_run_folder PASSED [ 80%]
+tests/test_stage8_output.py::TestSynWriter::test_write_creates_data_file PASSED [ 80%]
+tests/test_stage8_output.py::TestSynWriter::test_write_creates_report_json PASSED [ 80%]
+tests/test_stage8_output.py::TestSynWriter::test_csv_source_writes_csv PASSED [ 81%]
+tests/test_stage8_output.py::TestSynWriter::test_json_source_writes_json PASSED [ 81%]
+tests/test_stage8_output.py::TestSynWriter::test_written_csv_is_readable PASSED [ 81%]
+tests/test_stage8_output.py::TestSynResult::test_data_is_dataframe PASSED [ 81%]
+tests/test_stage8_output.py::TestSynResult::test_signal_cols_stored PASSED [ 82%]
+tests/test_stage8_output.py::TestSynResult::test_run_id_stored PASSED    [ 82%]
+tests/test_stage8_output.py::TestSynResult::test_as_dict_has_required_keys PASSED [ 82%]
+tests/test_stage8_output.py::TestSynResult::test_as_dict_n_samples_correct PASSED [ 82%]
+tests/test_stage8_output.py::TestSynResult::test_summary_returns_string PASSED [ 83%]
+tests/test_stage8_output.py::TestSynResult::test_summary_contains_model_name PASSED [ 83%]
+tests/test_stage8_output.py::TestSynResult::test_save_creates_run_folder PASSED [ 83%]
+tests/test_stage8_output.py::TestSynResult::test_save_creates_report_json PASSED [ 83%]
+tests/test_stage8_output.py::TestSynResult::test_save_creates_data_file PASSED [ 84%]
+tests/test_stage8_output.py::TestSynResult::test_save_report_is_valid_json PASSED [ 84%]
+tests/test_stage9_core.py::TestImport::test_syn_flow_importable PASSED   [ 84%]
+tests/test_stage9_core.py::TestImport::test_magic_words_importable PASSED [ 85%]
+tests/test_stage9_core.py::TestImport::test_syn_session_importable PASSED [ 85%]
+tests/test_stage9_core.py::TestImport::test_syn_state_importable PASSED  [ 85%]
+tests/test_stage9_core.py::TestImport::test_overrides_importable PASSED  [ 85%]
+tests/test_stage9_core.py::TestImport::test_syn_parser_importable PASSED [ 86%]
+tests/test_stage9_core.py::TestMagicWords::test_generate_detected PASSED [ 86%]
+tests/test_stage9_core.py::TestMagicWords::test_generate_case_insensitive PASSED [ 86%]
+tests/test_stage9_core.py::TestMagicWords::test_go_triggers_generate PASSED [ 86%]
+tests/test_stage9_core.py::TestMagicWords::test_reset_detected PASSED    [ 87%]
+tests/test_stage9_core.py::TestMagicWords::test_start_over_triggers_reset PASSED [ 87%]
+tests/test_stage9_core.py::TestMagicWords::test_show_config_detected PASSED [ 87%]
+tests/test_stage9_core.py::TestMagicWords::test_explain_detected PASSED  [ 87%]
+tests/test_stage9_core.py::TestMagicWords::test_normal_message_returns_none PASSED [ 88%]
+tests/test_stage9_core.py::TestMagicWords::test_empty_message_returns_none PASSED [ 88%]
+tests/test_stage9_core.py::TestSynSession::test_empty_on_init PASSED     [ 88%]
+tests/test_stage9_core.py::TestSynSession::test_add_increases_length PASSED [ 88%]
+tests/test_stage9_core.py::TestSynSession::test_multiple_adds PASSED     [ 89%]
+tests/test_stage9_core.py::TestSynSession::test_clear_resets PASSED      [ 89%]
+tests/test_stage9_core.py::TestSynSession::test_turns_returns_list PASSED [ 89%]
+tests/test_stage9_core.py::TestSynSession::test_as_messages_format PASSED [ 89%]
+tests/test_stage9_core.py::TestSynState::test_initial_state_is_collecting PASSED [ 90%]
+tests/test_stage9_core.py::TestSynState::test_initial_config_is_none PASSED [ 90%]
+tests/test_stage9_core.py::TestSynState::test_transition_to_executing PASSED [ 90%]
+tests/test_stage9_core.py::TestSynState::test_transition_back_to_collecting PASSED [ 90%]
+tests/test_stage9_core.py::TestSynState::test_invalid_transition_raises PASSED [ 91%]
+tests/test_stage9_core.py::TestSynState::test_update_config PASSED       [ 91%]
+tests/test_stage9_core.py::TestSynState::test_reset_clears_config PASSED [ 91%]
+tests/test_stage9_core.py::TestSynState::test_reset_returns_to_collecting PASSED [ 91%]
+tests/test_stage9_core.py::TestSynState::test_reset_clears_session PASSED [ 92%]
+tests/test_stage9_core.py::TestSynState::test_is_ready_false_without_config PASSED [ 92%]
+tests/test_stage9_core.py::TestSynState::test_is_ready_true_with_config PASSED [ 92%]
+tests/test_stage9_core.py::TestOverrideDetection::test_model_override PASSED [ 93%]
+tests/test_stage9_core.py::TestOverrideDetection::test_sampling_rate_hz_override PASSED [ 93%]
+tests/test_stage9_core.py::TestOverrideDetection::test_n_samples_override PASSED [ 93%]
+tests/test_stage9_core.py::TestOverrideDetection::test_device_gpu_maps_to_cuda PASSED [ 93%]
+tests/test_stage9_core.py::TestOverrideDetection::test_no_override_returns_none PASSED [ 94%]
+tests/test_stage9_core.py::TestGuardrails::test_repair_json_strips_markdown PASSED [ 94%]
+tests/test_stage9_core.py::TestGuardrails::test_repair_json_extracts_from_prose PASSED [ 94%]
+tests/test_stage9_core.py::TestGuardrails::test_parse_llm_response_valid_json PASSED [ 94%]
+tests/test_stage9_core.py::TestGuardrails::test_parse_llm_response_removes_invalid_fields PASSED [ 95%]
+tests/test_stage9_core.py::TestGuardrails::test_parse_llm_response_returns_empty_on_bad_json PASSED [ 95%]
+tests/test_stage9_core.py::TestSynParser::test_parse_returns_dict PASSED [ 95%]
+tests/test_stage9_core.py::TestSynParser::test_parse_extracts_domain PASSED [ 95%]
+tests/test_stage9_core.py::TestSynParser::test_parse_returns_empty_on_api_failure PASSED [ 96%]
+tests/test_stage9_core.py::TestSynFlowManualMode::test_manual_generate_returns_syn_result PASSED [ 96%]
+tests/test_stage9_core.py::TestSynFlowManualMode::test_manual_generate_output_has_synthetic_prefix PASSED [ 96%]
+tests/test_stage9_core.py::TestSynFlowManualMode::test_manual_generate_zero_nans PASSED [ 96%]
+tests/test_stage9_core.py::TestSynFlowManualMode::test_manual_generate_correct_n_samples PASSED [ 97%]
+tests/test_stage9_core.py::TestSynFlowManualMode::test_manual_result_has_quality_metrics PASSED [ 97%]
+tests/test_stage9_core.py::TestSynFlowManualMode::test_manual_chat_raises PASSED [ 97%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_chat_returns_string PASSED [ 97%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_chat_updates_state_config PASSED [ 98%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_chat_adds_to_session PASSED [ 98%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_reset_magic_word PASSED [ 98%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_show_config_magic_word PASSED [ 98%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_generate_with_no_config_returns_message PASSED [ 99%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_generate_triggers_pipeline PASSED [ 99%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_override_applied_mid_conversation PASSED [ 99%]
+tests/test_stage9_core.py::TestSynFlowAutoMode::test_multiple_chat_messages_accumulate PASSED [100%]
+
+============================== warnings summary ===============================
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\utils\serialization.py:76: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\utils\serialization.py:129: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\core\params.py:12: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\core\params.py:31: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\core\params.py:48: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\core\params.py:61: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\core\params.py:70: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\core\params.py:86: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\prediction\base.py:41: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\prediction\base.py:45: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\prediction\base.py:49: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\utils\tester.py:73: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\utils\tester.py:171: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:82: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:136: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:157: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:164: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:170: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:199: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:280: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:319: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:345: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:394: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:451: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:486: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:517: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:566: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:652: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:714: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:722: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:729: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:736: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:758: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:795: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:807: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:854: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:859: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:864: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:873: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py::TestZeroNaNGuarantee::test_knn_produces_zero_nans
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:915: PydanticDeprecatedSince20: The `validate_arguments` method is deprecated; use `validate_call` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+
+tests/test_stage5_imputer.py: 32 warnings
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:835: ChainedAssignmentError: A value is being set on a copy of a DataFrame or Series through chained assignment.
+  Such chained assignment never works to update the original DataFrame or Series, because the intermediate object on which we are setting values always behaves as a copy (due to Copy-on-Write).
+  
+  Try using '.loc[row_indexer, col_indexer] = value' instead, to perform the assignment in a single step.
+  
+  See the documentation for a more detailed explanation: https://pandas.pydata.org/pandas-docs/stable/user_guide/copy_on_write.html#chained-assignment
+    X[col][self.mask[col]] = est.predict(covs[self.mask[col]]).values.squeeze()
+
+tests/test_stage5_imputer.py: 32 warnings
+  C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\hyperimpute\plugins\imputers\_hyperimpute_internals.py:838: ChainedAssignmentError: A value is being set on a copy of a DataFrame or Series through chained assignment.
+  Such chained assignment never works to update the original DataFrame or Series, because the intermediate object on which we are setting values always behaves as a copy (due to Copy-on-Write).
+  
+  Try using '.loc[row_indexer, col_indexer] = value' instead, to perform the assignment in a single step.
+  
+  See the documentation for a more detailed explanation: https://pandas.pydata.org/pandas-docs/stable/user_guide/copy_on_write.html#chained-assignment
+    X[col][self.mask[col]] = np.clip(X[col][self.mask[col]], col_min, col_max)
+
+tests/test_stage8_output.py::TestSynWriter::test_json_source_writes_json
+  C:\Users\suraj\GitHub\synthflow\synthflow\output\writer.py:36: Pandas4Warning: The default 'epoch' date format is deprecated and will be removed in a future version, please use 'iso' date format instead.
+    data.to_json(path, orient="records", indent=2)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+===================== 387 passed, 105 warnings in 43.65s ======================

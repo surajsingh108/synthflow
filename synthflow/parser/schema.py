@@ -59,6 +59,8 @@ MODELS = Literal[
     "WaveGAN",
     "GaussianProcess",
     "AR",
+    "GaussianCopula",
+    "TabularVAE",
     "auto",
 ]
 
@@ -160,10 +162,67 @@ class SynConfig(BaseModel):
         ),
     )
 
+    # – Data type –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    data_type: Literal["timeseries", "tabular", "auto"] = Field(
+        default="auto",
+        description=(
+            "Whether the data is a time series or independent tabular rows. "
+            "'auto' detects from sampling_rate_hz: "
+            "  <= 1 Hz with no strong autocorrelation → tabular "
+            "  > 1 Hz or explicit timestamp sequence → timeseries. "
+            "Set 'tabular' explicitly for SECOM-style data."
+        ),
+    )
+
+    seq_len: int | None = Field(
+        default=None,
+        ge=1,
+        le=512,
+        description=(
+            "Sequence window length. "
+            "Set to 1 for tabular data (each row is an independent sample). "
+            "If None, inferred from sampling_rate_hz and data_type."
+        ),
+    )
+
+    # – Bounds –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    auto_bounds: bool = Field(
+        default=True,
+        description=(
+            "Automatically detect per-column physical bounds from real data. "
+            "Columns where real_min >= 0 get a lower bound of 0. "
+            "All columns are capped at their observed max. "
+            "Overridden per-column by column_bounds."
+        ),
+    )
+
+    column_bounds: dict[str, tuple[float, float]] = Field(
+        default_factory=dict,
+        description=(
+            "Explicit per-column (lo, hi) bounds enforced after synthesis. "
+            "Keys are original column names (no synthetic_ prefix). "
+            "Example: {'sensor_01': (0.0, 5000.0)}"
+        ),
+    )
+
     random_seed: int = Field(
         default=42,
         ge=0,
         description="Random seed for reproducibility.",
+    )
+
+    training_epochs: int = Field(
+        default=200,
+        gt=0,
+        le=10_000,
+        description=(
+            "Training epochs for neural generative models "
+            "(TabularVAE, TimeGAN, TimeVAE, RCGAN, WaveGAN). "
+            "Ignored for statistical models (GaussianProcess, AR, GaussianCopula). "
+            "Recommended: TabularVAE=200-500, TimeGAN=500-2000."
+        ),
     )
 
     # – 4. Hardware ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -240,6 +299,20 @@ class SynConfig(BaseModel):
             )
         return self
 
+    @model_validator(mode="after")
+    def validate_tabular_model(self) -> SynConfig:
+        """
+        GaussianCopula and TabularVAE require tabular or auto data_type.
+        They cannot be used with explicit timeseries data_type.
+        """
+        tabular_models = {"GaussianCopula", "TabularVAE"}
+        if self.model in tabular_models and self.data_type == "timeseries":
+            raise ValueError(
+                f"Model '{self.model}' is designed for tabular data. "
+                f"Set data_type='tabular' or data_type='auto'."
+            )
+        return self
+
     # – Serialisation helpers –––––––––––––––––––––––––––––––––––––––––––––––
 
     def to_json(self, path: str | Path | None = None) -> str:
@@ -293,8 +366,12 @@ class SynConfig(BaseModel):
             f"  model           – {self.model}",
             f"  n_samples       – {self.n_samples}",
             f"  augmentations   – {self.augmentations or 'none'}",
+            f"  data_type       – {self.data_type}",
+            f"  seq_len         – {self.seq_len or 'auto'}",
+            f"  auto_bounds     – {self.auto_bounds}",
             f"  device          – {self.device}",
             f"  batch_size      – {self.batch_size}",
+            f"  training_epochs – {self.training_epochs}",
             f"  random_seed     – {self.random_seed}",
         ]
         return "\n".join(lines)

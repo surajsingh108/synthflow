@@ -168,9 +168,9 @@ class TestSynFlowInstantiation:
         assert SynFlow.VERSION == "0.1.0"
 
     def test_chat_raises_not_implemented(self):
-        from synthflow import SynFlow
+        from synthflow import SynFlow, SynConfigError
         sf = SynFlow(mode="manual", config={"x": 1})
-        with pytest.raises(NotImplementedError):
+        with pytest.raises(SynConfigError):
             sf.chat("hello")
 
     def test_generate_raises_not_implemented(self):

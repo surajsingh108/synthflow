@@ -55,7 +55,7 @@ class TestDomainSizeSelection:
         assert result.model == "WaveGAN"
 
     def test_tiny_dataset_selects_probabilistic(self):
-        """Very small dataset – GaussianProcess or AR."""
+        """Very small dataset – GaussianProcess, AR, or GaussianCopula."""
         from synthflow.router import SynRouter
         router = SynRouter(available_vram_gb=8.0)
         result = router.select(
@@ -64,7 +64,7 @@ class TestDomainSizeSelection:
             sampling_rate_hz=10.0,
             n_signal_cols=1,
         )
-        assert result.model in ("GaussianProcess", "AR")
+        assert result.model in ("GaussianProcess", "AR", "GaussianCopula")
 
     def test_large_industrial_selects_timegan_or_timevae(self):
         """Large industrial dataset – TimeGAN or TimeVAE."""
@@ -315,7 +315,7 @@ class TestSelectionResult:
         from synthflow.router import SynRouter
         result = SynRouter(available_vram_gb=8.0).select()
         assert isinstance(result.scores, list)
-        assert len(result.scores) == 6  # one per model
+        assert len(result.scores) == 8  # one per model (includes GaussianCopula and TabularVAE)
 
     def test_scores_sorted_descending(self):
         from synthflow.router import SynRouter
